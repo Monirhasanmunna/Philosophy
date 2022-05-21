@@ -3,11 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Dashboard</title>
+  <title>@yield('title')</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{asset('backend/plugins/fontawesome-free/css/all.min.css')}}">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('css/toastr.min.css') }}">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bbootstrap 4 -->
@@ -31,8 +34,11 @@
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
+@toastr_css
 
- @include('layouts.backend.partial.sidebar')
+@include('layouts.backend.partial.topbar')
+
+@include('layouts.backend.partial.sidebar')
   
   <div class="content-wrapper">
     
@@ -44,7 +50,7 @@
     
   </div>
   
-  @include('layouts.backend.partial.footer')
+@include('layouts.backend.partial.footer')
  
   <aside class="control-sidebar control-sidebar-dark">
    
@@ -52,7 +58,10 @@
   
 </div>
 
-
+<script src="{{ asset('js/toastr.min.js') }}"></script>
+    @jquery
+    @toastr_js
+    @toastr_render
 <!-- jQuery -->
 <script src="{{asset('backend/plugins/jquery/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -87,6 +96,49 @@
 <script src="{{asset('backend/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('backend/js/demo.js')}}"></script>
+<script src="jquery.min.js"></script>
+<script src="toastr.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script>
+  
+  @if(Session::has('message'))
+  toastr.options =
+  {
+      "closeButton" : true,
+      "progressBar" : true
+  }
+          toastr.success("{{ session('message') }}");
+  @endif
+
+  @if(Session::has('error'))
+  toastr.options =
+  {
+      "closeButton" : true,
+      "progressBar" : true
+  }
+          toastr.error("{{ session('error') }}");
+  @endif
+
+  @if(Session::has('info'))
+toastr.options =
+{
+  "closeButton" : true,
+  "progressBar" : true
+}
+    toastr.info("{{ session('info') }}");
+@endif
+
+@if(Session::has('warning'))
+toastr.options =
+{
+  "closeButton" : true,
+  "progressBar" : true
+}
+    toastr.warning("{{ session('warning') }}");
+@endif
+</script>
+
 
 @yield('js')
 </body>
