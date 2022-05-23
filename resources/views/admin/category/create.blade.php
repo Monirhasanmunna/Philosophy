@@ -1,6 +1,6 @@
 @extends('layouts.backend.main')
 
-@section('title','Category')
+@section('title','Category Add')
 
 @section('header')
 <div class="content-header">
@@ -104,11 +104,4 @@
 
 </script>
 <!-- bs-custom-file-input -->
-<script src="{{asset('backend/plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
-<script>
-    $(document).ready(function () {
-        bsCustomFileInput.init();
-    });
-
-</script>
 @endsection

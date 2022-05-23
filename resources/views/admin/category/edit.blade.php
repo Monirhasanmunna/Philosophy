@@ -1,6 +1,6 @@
 @extends('layouts.backend.main')
 
-@section('title','Category')
+@section('title','Category Edit')
 
 @section('header')
 <div class="content-header">

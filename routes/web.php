@@ -5,6 +5,7 @@ use App\Http\Controllers\Author\AuthorDashboard;
 use App\Http\Controllers\Admin\AdminDashboard;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\AdminTagController;
+use App\Http\Controllers\Admin\adminPostController;
 
 
 
@@ -31,6 +32,13 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function() {
     Route::get('tag/{id}/edit',[AdminTagController::class,'edit'])->name('admin.tag.edit');
     Route::put('tag/{id}/update',[AdminTagController::class,'update'])->name('admin.tag.update');
     Route::delete('tag/{id}/delete',[AdminTagController::class,'destroy'])->name('admin.tag.destroy');
+    Route::get('post/list',[adminPostController::class,'index'])->name('admin.post.index');
+    Route::get('post/create',[adminPostController::class,'create'])->name('admin.post.create');
+    Route::post('post/store',[adminPostController::class,'store'])->name('admin.post.store');
+    Route::get('post/{id}/details',[adminPostController::class,'show'])->name('admin.post.show');
+    Route::get('post/{id}/edit',[adminPostController::class,'edit'])->name('admin.post.edit');
+    Route::put('post/{id}/update',[adminPostController::class,'update'])->name('admin.post.update');
+    Route::delete('post/{id}/delete',[adminPostController::class,'destroy'])->name('admin.post.destroy');
 });
 
 

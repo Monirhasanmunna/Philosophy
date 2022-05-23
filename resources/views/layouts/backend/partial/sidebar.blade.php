@@ -43,15 +43,15 @@
             </p>
           </a>
           <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="pages/forms/general.html" class="nav-link">
+            <li class="nav-item" style="width: 100%;">
+              <a href="{{route('admin.post.index')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>All Post</p>
+                <p>Post List</p>
               </a>
             </li>
 
-            <li class="nav-item">
-              <a href="pages/forms/general.html" class="nav-link">
+            <li class="nav-item" style="width: 100%;">
+              <a href="{{route('admin.post.create')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Add New</p>
               </a>
@@ -69,14 +69,14 @@
           </a>
           <ul class="nav nav-treeview">
             
-            <li class="nav-item">
+            <li class="nav-item" style="width: 100%;">
               <a href="{{route('admin.category.create')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Add New</p>
               </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item" style="width: 100%;">
               <a href="{{route('admin.category.index')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Category List</p>
@@ -95,14 +95,14 @@
           </a>
           <ul class="nav nav-treeview">
             
-            <li class="nav-item">
+            <li class="nav-item" style="width: 100%;">
               <a href="{{route('admin.tag.create')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Add New</p>
               </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item" style="width: 100%;">
               <a href="{{route('admin.tag.index')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Tag List</p>

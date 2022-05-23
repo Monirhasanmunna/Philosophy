@@ -33,6 +33,7 @@
 
 @section('content')
 <div class="card">
+  <a class="btn bg-primary" href="{{route('admin.tag.create')}}">Add New</a>
     <div class="card-body">
       <table id="example1" class="table table-bordered table-striped text-center">
         <thead>

@@ -20,8 +20,9 @@ class CreatePostsTable extends Migration
             $table->string('slug');
             $table->string('image');
             $table->text('description');
-            $table->string('status');
-            $table->string('is_approve');
+            $table->string('view_count')->default(0);
+            $table->boolean('status')->default(false);
+            $table->boolean('is_approve')->default(false);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
