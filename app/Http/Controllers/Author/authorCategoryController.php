@@ -1,30 +1,30 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Author;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\User;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Session;
 
-class CategoryController extends Controller
+class authorCategoryController extends Controller
 {
     public function index()
     {   
         $user = User::FindorFail(Auth::id());
         $categories = Category::latest()->paginate();
-        return view('admin.category.index',compact('categories','user'));
+        return view('author.category.index',compact('categories','user'));
     }
 
     public function create()
     {
         $user = User::FindorFail(Auth::id());
-        return view('admin.category.create',compact('user'));
+        return view('author.category.create',compact('user'));
     }
 
     public function store(Request $request)
@@ -46,7 +46,7 @@ class CategoryController extends Controller
     {
         $user = User::FindorFail(Auth::id());
         $category = Category::FindorFail($id);
-        return view('admin.category.edit',compact('category','user'));
+        return view('author.category.edit',compact('category','user'));
     }
 
     
