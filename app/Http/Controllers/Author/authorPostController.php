@@ -74,7 +74,7 @@ class authorPostController extends Controller
       }else{
         $post->status = false;
       }
-      $post->is_approve = true;
+      $post->is_approve = false;
       $post->save();
       $post->categories()->attach($request->category);
       $post->tags()->attach($request->tag);
@@ -84,10 +84,8 @@ class authorPostController extends Controller
 
     public function show($id)
     {
-      
       $post = Post::FindorFail($id);
       return view('author.post.show',compact('post'));
-
     }
 
     
@@ -151,14 +149,13 @@ class authorPostController extends Controller
       }else{
         $post->status = false;
       }
-      $post->is_approve = true;
+      $post->is_approve = false;
       $post->save();
       $post->categories()->sync($request->category);
       $post->tags()->sync($request->tag);
       toastr()->success('Post Updated Succesfully :)');
       return redirect()->back();
     }
-
 
     public function destroy($id)
     {
