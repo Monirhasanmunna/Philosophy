@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\Admin\adminUserController;
+use App\Http\Controllers\Author\authorUserController;
+
 use App\Http\Controllers\Admin\AdminDashboard;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\AdminTagController;
@@ -57,6 +60,9 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function() {
 Route::group(['prefix'=>'author','middleware'=> ['auth','author']],function(){
 
     Route::get('/dashboard',[AuthorDashboard::class , 'index'])->name('author.dashboard');
+
+    Route::get('user/info',[authorUserController::class,'index'])->name('author.user.info');
+    Route::put('user/info/{id}/update',[authorUserController::class,'update'])->name('author.user.update');
 
     Route::get('category/list',[authorCategoryController::class, 'index'])->name('author.category.index');
     Route::get('category/create',[authorCategoryController::class, 'create'])->name('author.category.create');
