@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -12,12 +14,14 @@ class AdminTagController extends Controller
 {
     public function index()
     {
+        $user = User::FindorFail(Auth::id());
         $tags  = Tag::latest()->paginate();
-        return view('admin.tag.index',compact('tags'));    }
+        return view('admin.tag.index',compact('tags','user'));    }
 
     public function create()
     {
-        return view('admin.tag.create');
+        $user = User::FindorFail(Auth::id());
+        return view('admin.tag.create',compact('user'));
     }
 
     public function store(Request $request)
@@ -36,9 +40,10 @@ class AdminTagController extends Controller
     }
 
     public function edit($id)
-    {
+    {   
+        $user = User::FindorFail(Auth::id());
         $tag = Tag::FindorFail($id);
-        return view('admin.tag.edit',compact('tag'));
+        return view('admin.tag.edit',compact('tag','user'));
     }
 
     public function update(Request $request,$id)

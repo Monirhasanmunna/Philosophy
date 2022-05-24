@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\adminUserController;
 use App\Http\Controllers\Author\AuthorDashboard;
 use App\Http\Controllers\Admin\AdminDashboard;
 use App\Http\Controllers\Admin\CategoryController;
@@ -15,11 +16,12 @@ Route::get('/', function () {
 
 require __DIR__.'/auth.php';
 
-
 //Admin Dashborard Routes
 Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function() {
 
     Route::get('/dashboard',[AdminDashboard::class , 'index'])->name('admin.dashboard');
+    Route::get('user/info',[adminUserController::class,'index'])->name('admin.user.info');
+    Route::put('user/info/{id}/update',[adminUserController::class,'update'])->name('admin.user.update');
     Route::get('category/list',[CategoryController::class, 'index'])->name('admin.category.index');
     Route::get('category/create',[CategoryController::class, 'create'])->name('admin.category.create');
     Route::post('category/store',[CategoryController::class, 'store'])->name('admin.category.store');

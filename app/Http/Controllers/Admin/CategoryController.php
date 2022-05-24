@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -14,13 +16,15 @@ class CategoryController extends Controller
 {
     public function index()
     {   
+        $user = User::FindorFail(Auth::id());
         $categories = Category::latest()->paginate();
-        return view('admin.category.index',compact('categories'));
+        return view('admin.category.index',compact('categories','user'));
     }
 
     public function create()
     {
-        return view('admin.category.create');
+        $user = User::FindorFail(Auth::id());
+        return view('admin.category.create',compact('user'));
     }
 
     public function store(Request $request)
@@ -40,8 +44,9 @@ class CategoryController extends Controller
 
     public function edit($id)
     {
+        $user = User::FindorFail(Auth::id());
         $category = Category::FindorFail($id);
-        return view('admin.category.edit',compact('category'));
+        return view('admin.category.edit',compact('category','user'));
     }
 
     public function update(Request $request, $id)

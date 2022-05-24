@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -16,15 +17,17 @@ class adminPostController extends Controller
 
     public function index()
     {
+      $user = User::FindorFail(Auth::id());
       $posts = Post::latest()->paginate();
-      return view('admin.post.index',compact('posts'));
+      return view('admin.post.index',compact('posts','user'));
     }
 
     public function create()
     {
+        $user = User::FindorFail(Auth::id());
         $categories = Category::all();
         $tags = Tag::all();
-        return view('admin.post.create',compact('categories','tags'));
+        return view('admin.post.create',compact('categories','tags','user'));
     }
 
     public function store(Request $request)
@@ -90,10 +93,11 @@ class adminPostController extends Controller
     
     public function edit($id)
     {
+      $user = User::FindorFail(Auth::id());
       $post = Post::FindorFail($id);
       $categories = Category::all();
       $tags = Tag::all();
-      return view('admin.post.edit',compact('post','categories','tags'));
+      return view('admin.post.edit',compact('post','categories','tags','user'));
     }
 
 

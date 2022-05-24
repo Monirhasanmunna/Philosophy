@@ -1,5 +1,6 @@
 @extends('layouts.backend.main')
 
+@section('title','Post Details')
 @section('content')
     <div class="content-header">
       <div class="container-fluid">
