@@ -51,7 +51,7 @@
         @foreach ($posts as $key => $post)   
         <tr>
           <td>{{$key+1}}</td>
-          <td><img style="max-width: 65px;" class="thumbnail" src="{{asset('storage/post/'.$post->image)}}" alt="{{$post->image}}" srcset=""></td>
+          <td><img style="max-width: 70px;" class="img-thumbnail" src="{{asset('storage/post/'.$post->image)}}" alt="{{$post->image}}" srcset=""></td>
           <td>{{$post->title}}</td>
           <td>{{$post->user->name}}</td>
           <td>{{$post->view_count}}</td>

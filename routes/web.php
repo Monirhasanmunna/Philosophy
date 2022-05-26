@@ -9,16 +9,24 @@ use App\Http\Controllers\Admin\AdminDashboard;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\AdminTagController;
 use App\Http\Controllers\Admin\adminPostController;
+use App\Http\Controllers\Admin\SettingsController;
 
 use App\Http\Controllers\Author\AuthorDashboard;
 use App\Http\Controllers\Author\authorCategoryController;
 use App\Http\Controllers\Author\authorTagController;
 use App\Http\Controllers\Author\authorPostController;
 
+use App\Http\Controllers\FrontendController;
 
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+//Frontend Template Route
+Route::group([],function() {
+
+    Route::get('/',[FrontendController::class,'home'])->name('home');
+    
+
 });
 
 require __DIR__.'/auth.php';
@@ -26,7 +34,7 @@ require __DIR__.'/auth.php';
 //Admin Dashborard Routes
 Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function() {
 
-    Route::get('/dashboard',[AdminDashboard::class , 'index'])->name('admin.dashboard');
+    Route::get('',[AdminDashboard::class , 'index'])->name('admin.dashboard');
 
     Route::get('user/info',[adminUserController::class,'index'])->name('admin.user.info');
     Route::put('user/info/{id}/update',[adminUserController::class,'update'])->name('admin.user.update');
@@ -52,6 +60,11 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function() {
     Route::get('post/{id}/edit',[adminPostController::class,'edit'])->name('admin.post.edit');
     Route::put('post/{id}/update',[adminPostController::class,'update'])->name('admin.post.update');
     Route::delete('post/{id}/delete',[adminPostController::class,'destroy'])->name('admin.post.destroy');
+
+    Route::get('settings',[SettingsController::class, 'index'])->name('admin.settings');
+    Route::put('logo/{id}/update',[SettingsController::class, 'logoUpdate'])->name('admin.settings.logo');
+    Route::put('social/{id}/update',[SettingsController::class, 'socialUpdate'])->name('admin.settings.social');
+    Route::put('about/{id}/update',[SettingsController::class, 'aboutUpdate'])->name('admin.settings.about');
 });
 
 

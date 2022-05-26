@@ -2,6 +2,12 @@
 
 namespace App\Providers;
 
+use App\Models\About;
+use App\Models\Logo;
+use App\Models\Social;
+use App\Models\User;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +19,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+
         //
+    
     }
 
     /**
@@ -23,6 +31,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $logo = Logo::where('id',1)->first();
+        View::share('logo',$logo);
+
+        $social = Social::where('id',1)->first();
+        View::share('social',$social);
+
+        $about = About::where('id',1)->first();
+        View::share('about',$about);
     }
 }
