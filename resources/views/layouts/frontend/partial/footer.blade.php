@@ -55,9 +55,10 @@
                 <p>Sit vel delectus amet officiis repudiandae est voluptatem. Tempora maxime provident nisi et fuga et enim exercitationem ipsam. Culpa consequatur occaecati.</p>
 
                 <div class="subscribe-form">
-                    <form id="mc-form" class="group" novalidate="true">
 
-                        <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required="">
+                    <form id="mc-form" class="group" novalidate="true" action="{{route('subscription.store')}}" method="POST">
+                        @csrf
+                        <input type="email" value="" name="email" class="email" id="mc-email" placeholder="Email Address" required="">
             
                         <input type="submit" name="subscribe" value="Send">
             

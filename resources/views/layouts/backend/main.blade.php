@@ -9,7 +9,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{asset('backend/plugins/fontawesome-free/css/all.min.css')}}">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('css/toastr.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/toastr.min.css')}}">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
   <script src="https://kit.fontawesome.com/b050c98186.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />

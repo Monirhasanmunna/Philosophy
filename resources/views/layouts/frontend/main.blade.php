@@ -23,6 +23,7 @@
     ================================================== -->
     <script src="{{asset('frontend/js/modernizr.js')}}"></script>
     <script src="{{asset('frontend/js/pace.min.js')}}"></script>
+    <link rel="stylesheet" href="{{ asset('css/toastr.min.css') }}">
 
     <!-- favicons
     ================================================== -->
@@ -32,11 +33,11 @@
 </head>
 
 <body id="top">
-
+    @toastr_css
     <!-- pageheader
     ================================================== -->
     <section class="s-pageheader @yield('home_header_design')">
-
+       
         @include('layouts.frontend.partial.header')
 
 
@@ -67,6 +68,10 @@
     @yield('loder')
 
 
+    <script src="{{ asset('js/toastr.min.js') }}"></script>
+    @jquery
+    @toastr_js
+    @toastr_render
     <!-- Java Script
     ================================================== -->
     <script src="{{asset('frontend/js/jquery-3.2.1.min.js')}}"></script>
