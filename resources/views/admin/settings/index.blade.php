@@ -74,7 +74,7 @@
                     <div class="form-group row">
                       <label for="about" class="col-sm-2 col-form-label">About :</label>
                       <div class="col-sm-10">
-                        <textarea type="text"  class="form-control" rows="8" name="about" value="" id="about" placeholder="Enter About Your Website"></textarea>
+                        <textarea type="text"  class="form-control" rows="8" name="about" value="" id="about" placeholder="Enter About Your Website">{{$about->about}}</textarea>
                       </div>
                     </div>
 
@@ -96,42 +96,42 @@
                     <div class="form-group row">
                       <label for="facebook" class="col-sm-2 col-form-label">Facebook :</label>
                       <div class="col-sm-10">
-                        <input type="text"  class="form-control" name="facebook" value="" id="facebook" placeholder="Enter Your facebook link">
+                        <input type="text"  class="form-control" name="facebook" value="{{$social->facebook}}" id="facebook" placeholder="Enter Your facebook link">
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label for="instagram" class="col-sm-2 col-form-label">Instagram :</label>
                       <div class="col-sm-10">
-                        <input type="text"  class="form-control" name="instagram" value="" id="instagram" placeholder="Enter Your instagram link">
+                        <input type="text"  class="form-control" name="instagram" value="{{$social->instagram}}" id="instagram" placeholder="Enter Your instagram link">
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label for="twitter" class="col-sm-2 col-form-label">Twitter :</label>
                       <div class="col-sm-10">
-                        <input type="text"  class="form-control" name="twitter" value="" id="twitter" placeholder="Enter Your twitter link">
+                        <input type="text"  class="form-control" name="twitter" value="{{$social->twitter}}" id="twitter" placeholder="Enter Your twitter link">
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label for="pinterest" class="col-sm-2 col-form-label">Pinterest :</label>
                       <div class="col-sm-10">
-                        <input type="text"  class="form-control" name="pinterest" value="" id="facebook" placeholder="Enter Your pinterest link">
+                        <input type="text"  class="form-control" name="pinterest" value="{{$social->pinterest}}" id="facebook" placeholder="Enter Your pinterest link">
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label for="google_plus" class="col-sm-2 col-form-label">Google Plus :</label>
                       <div class="col-sm-10">
-                        <input type="text"  class="form-control" name="google_plus" value="" id="google_plus" placeholder="Enter Your google plus link">
+                        <input type="text"  class="form-control" name="google_plus" value="{{$social->google_plus}}" id="google_plus" placeholder="Enter Your google plus link">
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label for="linkdin" class="col-sm-2 col-form-label">Linkdin :</label>
                       <div class="col-sm-10">
-                        <input type="text"  class="form-control" name="linkdin" value="" id="linkdin" placeholder="Enter Your linkdin link">
+                        <input type="text"  class="form-control" name="linkdin" value="{{$social->linkdin}}" id="linkdin" placeholder="Enter Your linkdin link">
                       </div>
                     </div>
 

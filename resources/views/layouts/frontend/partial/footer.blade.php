@@ -2,7 +2,6 @@
 
     <div class="s-footer__main">
         <div class="row">
-            
             <div class="col-two md-four mob-full s-footer__sitelinks">
                     
                 <h4>Quick Links</h4>
@@ -54,21 +53,20 @@
 
                 <p>Sit vel delectus amet officiis repudiandae est voluptatem. Tempora maxime provident nisi et fuga et enim exercitationem ipsam. Culpa consequatur occaecati.</p>
 
+                @error('email')
+                    <div class="alert bg-danger">{{ $message }}</div>
+                @enderror
                 <div class="subscribe-form">
-
                     <form id="mc-form" class="group" novalidate="true" action="{{route('subscription.store')}}" method="POST">
                         @csrf
-                        <input type="email" value="" name="email" class="email" id="mc-email" placeholder="Email Address" required="">
+                        <input type="email" value="" name="email" class="email" id="mc-email" placeholder="Email Address" required="" class="@error('email') is-invalid @enderror">
             
                         <input type="submit" name="subscribe" value="Send">
-            
+
                         <label for="mc-email" class="subscribe-message"></label>
-            
                     </form>
                 </div>
-
             </div> <!-- end s-footer__subscribe -->
-
         </div>
     </div> <!-- end s-footer__main -->
 

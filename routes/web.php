@@ -20,23 +20,14 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\PostDetailsController;
 use App\Http\Controllers\SubscriptionController;
 
-
-// Route::get('test',function(){
-
-//     return view('frontend.postdetails');
-
-// });
+require __DIR__.'/auth.php';
 
 //Frontend Template Route
 Route::group([],function() {
-
     Route::get('/',[FrontendController::class,'home'])->name('home');
     Route::get('post/{slug}/details',[PostDetailsController::class,'index'])->name('post.details');
     Route::post('subscription',[SubscriptionController::class,'store'])->name('subscription.store');
-
 });
-
-require __DIR__.'/auth.php';
 
 //Admin Dashborard Routes
 Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function() {

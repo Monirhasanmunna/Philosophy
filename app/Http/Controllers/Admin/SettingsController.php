@@ -52,6 +52,9 @@ class SettingsController extends Controller
 
             $postImage = Image::make($image)->resize(478,86)->stream();
             Storage::disk('public')->put('logo/'.$imageName,$postImage);
+        }else{
+
+            $imageName = $logo->logo;
         }
 
         $logo->logo = $imageName;
@@ -64,12 +67,12 @@ class SettingsController extends Controller
     {
         $request->validate([
 
-            'facebook' => 'sometimes',
-            'instagram' => 'sometimes',
-            'twitter'   => 'sometimes',
-            'pinterest' => 'sometimes',
-            'google_plus' => 'sometimes',
-            'linkdin' => 'sometimes',
+            'facebook' => 'required',
+            'instagram' => 'required',
+            'twitter'   => 'required',
+            'pinterest' => 'required',
+            'google_plus' => 'required',
+            'linkdin' => 'required',
 
         ]);
 
@@ -91,7 +94,7 @@ class SettingsController extends Controller
     {
         $request->validate([
 
-            'about' => 'sometimes',
+            'about' => 'required',
 
         ]);
 
