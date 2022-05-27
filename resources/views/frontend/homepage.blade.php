@@ -1,5 +1,7 @@
 @extends('layouts.frontend.main')
 
+@section('home_header_design','s-pageheader--home')
+
 @section('pageheader')
 <div class="pageheader-content row">
     <div class="col-full">
@@ -15,7 +17,7 @@
                         @endforeach
                         
 
-                        <h1><a href="#0" title="">{{$firstpost->title}}</a></h1>
+                        <h1><a href="{{route('post.details',[$firstpost->slug])}}" title="">{{$firstpost->title}}</a></h1>
 
                         <div class="entry__info">
                             <a href="#0" class="entry__profile-pic">
@@ -44,7 +46,7 @@
                             <span class="entry__category"><a href="#0">{{$category->name}}</a></span>
                         @endforeach
                         
-                        <h1><a href="#0" title="">{{$secondpost->title}}</a></h1>
+                        <h1><a href="{{route('post.details',[$secondpost->slug])}}" title="">{{$secondpost->title}}</a></h1>
 
                         <div class="entry__info">
                             <a href="#0" class="entry__profile-pic">
@@ -80,7 +82,7 @@
         <article class="masonry__brick entry format-standard" data-aos="fade-up">
                 
             <div class="entry__thumb">
-                <a href="#" class="entry__thumb-link">
+                <a href="{{route('post.details',[$post->slug])}}" class="entry__thumb-link">
                     <img src="{{asset('storage/post/'.$post->image)}}" alt="{{$post->image}}" style="width: 100%;">
                 </a>
             </div>
@@ -91,7 +93,7 @@
                     <div class="entry__date">
                         <a href="single-standard.html">{{$post->created_at}}</a>
                     </div>
-                    <h1 class="entry__title"><a href="single-standard.html">{{Str::words($post->title, 5)}}</a></h1>
+                    <h1 class="entry__title"><a href="{{route('post.details',[$post->slug])}}">{{Str::words($post->title, 5)}}</a></h1>
                     
                 </div>
                 <div class="entry__excerpt">

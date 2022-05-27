@@ -35,7 +35,7 @@
 
     <!-- pageheader
     ================================================== -->
-    <section class="s-pageheader s-pageheader--home">
+    <section class="s-pageheader @yield('home_header_design')">
 
         @include('layouts.frontend.partial.header')
 

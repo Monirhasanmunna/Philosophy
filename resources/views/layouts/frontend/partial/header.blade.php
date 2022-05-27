@@ -2,7 +2,7 @@
     <div class="header__content row">
 
         <div class="header__logo">
-            <a class="logo" href="index.html">
+            <a class="logo" href="{{route('home')}}">
                 <img src="{{asset('storage/logo/'.$logo->logo)}}" alt="{{$logo->logo}}">
             </a>
         </div> <!-- end header__logo -->

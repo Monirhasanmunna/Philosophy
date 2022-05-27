@@ -15,8 +15,8 @@ class FrontendController extends Controller
         $firstItem = $frontendPost->splice(0,1);
         $secondItem = $frontendPost->splice(0,2);
 
-        $popularPost = Post::orderBy('created_at','Asc')->take(6)->get();
-        return view('frontend.homepage',compact('posts','firstItem','secondItem','popularPost'));
+        
+        return view('frontend.homepage',compact('posts','firstItem','secondItem'));
     }
 
 }

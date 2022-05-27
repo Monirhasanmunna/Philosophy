@@ -17,14 +17,20 @@ use App\Http\Controllers\Author\authorTagController;
 use App\Http\Controllers\Author\authorPostController;
 
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\PostDetailsController;
 
 
+// Route::get('test',function(){
 
+//     return view('frontend.postdetails');
+
+// });
 
 //Frontend Template Route
 Route::group([],function() {
 
     Route::get('/',[FrontendController::class,'home'])->name('home');
+    Route::get('post/{slug}/details',[PostDetailsController::class,'index'])->name('post.details');
 
 });
 
