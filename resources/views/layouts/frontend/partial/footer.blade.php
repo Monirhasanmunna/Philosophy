@@ -38,12 +38,12 @@
                 <h4>Social</h4>
 
                 <ul class="s-footer__linklist">
-                    <li><a href="#0">Facebook</a></li>
-                    <li><a href="#0">Instagram</a></li>
-                    <li><a href="#0">Twitter</a></li>
-                    <li><a href="#0">Pinterest</a></li>
-                    <li><a href="#0">Google+</a></li>
-                    <li><a href="#0">LinkedIn</a></li>
+                    <li><a target="blank" href="{{$social->facebook}}">Facebook</a></li>
+                    <li><a target="blank" href="{{$social->instagram}}">Instagram</a></li>
+                    <li><a target="blank" href="{{$social->twitter}}">Twitter</a></li>
+                    <li><a target="blank" href="{{$social->pinterest}}">Pinterest</a></li>
+                    <li><a target="blank" href="{{$social->google_plus}}">Google+</a></li>
+                    <li><a target="blank" href="{{$social->linkdin}}">LinkedIn</a></li>
                 </ul>
 
             </div> <!-- end s-footer__social -->

@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\About;
+use App\Models\Category;
 use App\Models\Logo;
 use App\Models\Social;
 use App\Models\Tag;
@@ -43,5 +44,8 @@ class AppServiceProvider extends ServiceProvider
 
         $tags = Tag::all();
         View::share('tags',$tags);
+
+        $categories = Category::all();
+        View::share('categories',$categories);
     }
 }

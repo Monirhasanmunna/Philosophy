@@ -48,7 +48,7 @@
 
                         <div class="entry__info">
                             <a href="#0" class="entry__profile-pic">
-                                <img class="avatar" src="{{asset('storage/user/'.$secondpost->image)}}" alt="">
+                                <img class="avatar" src="{{asset('storage/user/'.$secondpost->user->image)}}" alt="{{$secondpost->user->image}}">
                             </a>
 
                             <ul class="entry__meta">
@@ -108,30 +108,14 @@
                 </div>
             </div>
 
-        </article> <!-- end article -->
-                            
+        </article> <!-- end article -->               
         @endforeach
-
     </div> <!-- end masonry -->
 </div> <!-- end masonry-wrap -->
 
-<div class="row">
-    <div class="col-full">
-        <nav class="pgn">
-            <ul>
-                <li><a class="pgn__prev" href="#0">Prev</a></li>
-                <li><a class="pgn__num" href="#0">1</a></li>
-                <li><span class="pgn__num current">2</span></li>
-                <li><a class="pgn__num" href="#0">3</a></li>
-                <li><a class="pgn__num" href="#0">4</a></li>
-                <li><a class="pgn__num" href="#0">5</a></li>
-                <li><span class="pgn__num dots">…</span></li>
-                <li><a class="pgn__num" href="#0">8</a></li>
-                <li><a class="pgn__next" href="#0">Next</a></li>
-            </ul>
-        </nav>
-    </div>
-</div>
+    {{-- Pagination --}}
+    {{$posts->links('frontend.pagination')}}
+    {{-- Pagination --}}
 @endsection
 
 @section('loder')
