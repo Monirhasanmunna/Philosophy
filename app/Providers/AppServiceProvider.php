@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\About;
 use App\Models\Logo;
 use App\Models\Social;
+use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Auth;
@@ -39,5 +40,8 @@ class AppServiceProvider extends ServiceProvider
 
         $about = About::where('id',1)->first();
         View::share('about',$about);
+
+        $tags = Tag::all();
+        View::share('tags',$tags);
     }
 }

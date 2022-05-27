@@ -25,7 +25,6 @@ use App\Http\Controllers\FrontendController;
 Route::group([],function() {
 
     Route::get('/',[FrontendController::class,'home'])->name('home');
-    
 
 });
 
