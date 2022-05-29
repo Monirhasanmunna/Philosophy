@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use CyrildeWit\EloquentViewable\Support\Period;
@@ -15,7 +16,6 @@ class FrontendController extends Controller
         $firstItem = $frontendPost->splice(0,1);
         $secondItem = $frontendPost->splice(0,2);
 
-        
         return view('frontend.homepage',compact('posts','firstItem','secondItem'));
     }
 

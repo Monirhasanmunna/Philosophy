@@ -19,6 +19,7 @@ use App\Http\Controllers\Author\authorPostController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\PostDetailsController;
 use App\Http\Controllers\SubscriptionController;
+use App\Http\Controllers\CommentController;
 
 require __DIR__.'/auth.php';
 
@@ -27,6 +28,7 @@ Route::group([],function() {
     Route::get('/',[FrontendController::class,'home'])->name('home');
     Route::get('post/{slug}/details',[PostDetailsController::class,'index'])->name('post.details');
     Route::post('subscription',[SubscriptionController::class,'store'])->name('subscription.store');
+    Route::post('comments/{post}',[CommentController::class,'store'])->name('comment.store');
 });
 
 //Admin Dashborard Routes

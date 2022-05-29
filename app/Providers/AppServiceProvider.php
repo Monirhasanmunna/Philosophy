@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\About;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Logo;
 use App\Models\Post;
 use App\Models\Social;
@@ -51,5 +52,6 @@ class AppServiceProvider extends ServiceProvider
 
         $popularPost = Post::orderBy('created_at','Asc')->take(6)->get();
         View::share('popularPost',$popularPost);
+
     }
 }
