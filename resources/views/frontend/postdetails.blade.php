@@ -109,11 +109,7 @@
                         </li> <!-- end comment level 1 -->
                         @endforeach
 
-                       
-
-
                     </ol> <!-- end commentlist -->
-
 
                     <!-- respond
                     ================================================== -->
