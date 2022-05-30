@@ -80,13 +80,13 @@
             @endif
           </td>
 
-          <td style="width: 0px;"><a href="{{route('admin.post.show',[$post->id])}}"><i class="material-icons btn-sm btn-info waves-effect">visibility</i></a></td>
-          <td style="width: 0px;"><a href="{{route('admin.post.edit',[$post->id])}}"><i class="material-icons btn-sm btn-info waves-effect">edit</i></a></td>
+          <td style="width: 0px;"><a href="{{route('admin.post.show',[$post->id])}}"><i class="fas fa-eye btn-sm btn-primary waves-effect"></i></a></td>
+          <td style="width: 0px;"><a href="{{route('admin.post.edit',[$post->id])}}"><i class="fas fa-pen-to-square btn-sm btn-info waves-effect"></i></a></td>
           <td style="width: 0px;">
             <form action="{{route('admin.post.destroy',[$post->id])}}" method="post">
               @method('Delete')
               @csrf
-              <button class="show-alert-delete-box " data-toggle="tooltip" title='Delete' style="border:none;background-color: transparent;" type="submit"><i class="material-icons btn-sm btn-danger waves-effect">delete</i></button>
+              <button class="show-alert-delete-box " data-toggle="tooltip" title='Delete' style="border:none;background-color: transparent;" type="submit"><i class="fas fa-trash btn-sm btn-danger waves-effect"></i></button>
             </form>
 
           </td>

@@ -49,12 +49,12 @@
           <td>{{$category->slug}}</td>
           <td>{{$category->created_at}}</td>
           <td>{{$category->updated_at}}</td>
-          <td style="width: 0px;"><a href="{{route('admin.category.edit',[$category->id])}}"><i class="material-icons btn-sm btn-info waves-effect">edit</i></a></td>
+          <td style="width: 0px;"><a href="{{route('admin.category.edit',[$category->id])}}"><i class="fas fa-pen-to-square btn-sm btn-info waves-effect"></i></a></td>
           <td style="width: 0px;">
             <form action="{{route('admin.category.destroy',[$category->id])}}" method="post">
               @method('Delete')
               @csrf
-              <button class="show-alert-delete-box " data-toggle="tooltip" title='Delete' style="border:none;background-color: transparent;" type="submit"><i class="material-icons btn-sm btn-danger waves-effect">delete</i></button>
+              <button class="show-alert-delete-box " data-toggle="tooltip" title='Delete' style="border:none;background-color: transparent;" type="submit"><i class="fas fa-trash btn-sm btn-danger waves-effect"></i></button>
             </form>
 
           </td>
