@@ -84,15 +84,40 @@ class adminPostController extends Controller
 
     public function show($id)
     {
-      
+      $user = User::FindorFail(Auth::id());
       $post = Post::FindorFail($id);
-      return view('admin.post.show',compact('post'));
+      return view('admin.post.show',compact('post','user'));
 
     }
+
+    public function approve($id)
+    {
+      $isApprove = Post::FindorFail($id);
+      $isApprove->user_id = $isApprove->user_id;
+      $isApprove->is_approve = true;
+      $isApprove->save();
+      toastr()->success('Post Approved Succesfully :)');
+      return redirect()->back();
+
+    }
+
+    public function disapprove($id)
+    {
+      $isApprove = Post::FindorFail($id);
+      $isApprove->user_id = $isApprove->user_id;
+      $isApprove->is_approve = false;
+      $isApprove->save();
+      toastr()->success('Post Disapproved Succesfully :)');
+      return redirect()->back();
+
+    }
+
+
 
     
     public function edit($id)
     {
+      
       $user = User::FindorFail(Auth::id());
       $post = Post::FindorFail($id);
       $categories = Category::all();
@@ -142,7 +167,7 @@ class adminPostController extends Controller
         }
       
       $post->title = $request->title;
-      $post->user_id = Auth::id();
+      $post->user_id = $post->user_id;
       $post->slug = $slug;
       $post->image = $imageName;
       $post->description= $request->description;
@@ -158,6 +183,7 @@ class adminPostController extends Controller
       toastr()->success('Post Updated Succesfully :)');
       return redirect()->back();
     }
+
 
 
     public function destroy($id)

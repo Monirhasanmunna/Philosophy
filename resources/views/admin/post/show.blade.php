@@ -23,6 +23,23 @@
     <div class="content">
       <div class="container-fluid">
         <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <a class="btn btn-sm bg-danger my-2" href="{{route('admin.post.index')}}"><i class="fas fa-left-long"></i><span class="pl-1">Back</span></a>
+            @if ($post->is_approve == false)
+            <form class="pull-right" action="{{route('admin.post.approve',[$post->id])}}" method="post" style="background: transparent;">
+              @csrf
+              @method('PUT')
+              <button type="submit" class="btn btn-sm bg-info">Need Approve</button>
+            </form>
+            @else
+            <form class="pull-right" action="{{route('admin.post.disapprove',[$post->id])}}" method="post" style="background: transparent;">
+              @csrf
+              @method('PUT')
+              <button type="submit" class="btn btn-sm bg-info">Disapprove</button>
+            </form>
+            @endif
+            
+          </div>
           <div class="col-lg-6">
             <div class="card">
                 <div class="card-header">

@@ -11,7 +11,7 @@ class PostDetailsController extends Controller
     public function index($slug)
     {
 
-        $post = Post::where('slug',$slug)->first();
+        $post = Post::where('slug',$slug)->status()->approve()->first();
         $comments = $post->comments()->get();
         return view('frontend.postdetails',compact('post','comments'));
     }

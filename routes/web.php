@@ -54,6 +54,8 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function() {
     Route::delete('tag/{id}/delete',[AdminTagController::class,'destroy'])->name('admin.tag.destroy');
 
     Route::get('post/list',[adminPostController::class,'index'])->name('admin.post.index');
+    Route::put('post/{id}/approve',[adminPostController::class,'approve'])->name('admin.post.approve');
+    Route::put('post/{id}/disapprove',[adminPostController::class,'disapprove'])->name('admin.post.disapprove');
     Route::get('post/create',[adminPostController::class,'create'])->name('admin.post.create');
     Route::post('post/store',[adminPostController::class,'store'])->name('admin.post.store');
     Route::get('post/{id}/details',[adminPostController::class,'show'])->name('admin.post.show');

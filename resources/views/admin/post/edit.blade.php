@@ -107,10 +107,18 @@
                       </div>
 
                       <div class="form-group">
-                        <div class="form-check form-check-inline">
+                        @if ($post->user_id == 1)
+                          <div class="form-check form-check-inline">
                             <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="1" name="status" {{$post->status == 1 ? 'checked' : ''}}>
-                            <label class="form-check-label" for="inlineCheckbox1">Publish</label>
+                            <label class="form-check-label" for="inlineCheckbox1">Status</label>
                           </div>
+                        @else
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="1" name="is_approve" disabled {{$post->is_approve == 1 ? 'checked' : ''}}>
+                          <label class="form-check-label" for="inlineCheckbox2">{{$post->is_approve == 1 ? 'Approved' : 'Approve'}}</label>
+                        </div>
+                        @endif
+                        
                     </div>
 
                 </div>

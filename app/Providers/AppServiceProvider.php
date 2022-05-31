@@ -50,7 +50,7 @@ class AppServiceProvider extends ServiceProvider
         $categories = Category::all();
         View::share('categories',$categories);
 
-        $popularPost = Post::orderBy('created_at','Asc')->take(6)->get();
+        $popularPost = Post::orderBy('created_at','Asc')->approve()->take(6)->get();
         View::share('popularPost',$popularPost);
 
     }
