@@ -111,6 +111,13 @@
           </ul>
         </li>
 
+        <li class="nav-item" style="width: 100%;">
+          <a href="{{route('admin.user.list')}}" class="nav-link">
+            <i class="fas fa-users"></i>
+            <p>User List</p>
+          </a>
+        </li>
+
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
             <i class="fas fa-gear"></i>

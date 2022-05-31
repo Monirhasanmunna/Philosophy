@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\AdminTagController;
 use App\Http\Controllers\Admin\adminPostController;
 use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\Admin\UserlistController;
 
 use App\Http\Controllers\Author\AuthorDashboard;
 use App\Http\Controllers\Author\authorCategoryController;
@@ -62,6 +63,10 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function() {
     Route::get('post/{id}/edit',[adminPostController::class,'edit'])->name('admin.post.edit');
     Route::put('post/{id}/update',[adminPostController::class,'update'])->name('admin.post.update');
     Route::delete('post/{id}/delete',[adminPostController::class,'destroy'])->name('admin.post.destroy');
+
+    Route::get('user/list',[UserlistController::class,'index'])->name('admin.user.list');
+    Route::get('user/{id}/details',[UserlistController::class,'show'])->name('admin.user.show');
+    Route::delete('user/{id}/delete',[UserlistController::class,'destroy'])->name('admin.user.destroy');
 
     Route::get('settings',[SettingsController::class, 'index'])->name('admin.settings');
     Route::put('logo/{id}/update',[SettingsController::class, 'logoUpdate'])->name('admin.settings.logo');
