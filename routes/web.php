@@ -28,6 +28,8 @@ require __DIR__.'/auth.php';
 Route::group([],function() {
     Route::get('/',[FrontendController::class,'home'])->name('home');
     Route::get('post/{slug}/details',[PostDetailsController::class,'index'])->name('post.details');
+    Route::get('PostByCategory/{slug}/post',[PostDetailsController::class,'categoryPost'])->name('categoryPost.details');
+    Route::get('PostByTag/{slug}/post',[PostDetailsController::class,'tagPost'])->name('tagpost.details');
     Route::post('subscription',[SubscriptionController::class,'store'])->name('subscription.store');
     Route::post('comments/{post}',[CommentController::class,'store'])->name('comment.store');
 });

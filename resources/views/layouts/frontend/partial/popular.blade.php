@@ -41,7 +41,6 @@
                 </li>
             </ul> <!-- end header__social -->
         </div> <!-- end about -->
-
     </div> <!-- end row -->
 
     <div class="row bottom tags-wrap">
@@ -50,7 +49,7 @@
 
             <div class="tagcloud">
                 @foreach ($tags as $tag)
-                    <a href="#0">{{$tag->name}}</a>
+                    <a href="{{route('tagpost.details',$tag->slug)}}">{{$tag->name}}</a>
                 @endforeach
                 
             </div> <!-- end tagcloud -->

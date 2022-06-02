@@ -48,10 +48,10 @@
             <ul class="header__nav">
                 <li class="{{Request::is('/') ? 'current' : ''}}"><a href="{{route('home')}}" title="">Home</a></li>
                 <li class="has-children">
-                    <a href="#0" title="">Categories</a>
+                    <a href="javascript:void(0);" title="">Categories</a>
                     <ul class="sub-menu">
                         @foreach ($categories as $category)
-                            <li><a href="category.html">{{$category->name}}</a></li>
+                            <li><a href="{{route('categoryPost.details',[$category->slug])}}">{{$category->name}}</a></li>
                         @endforeach
                     
                     </ul>
