@@ -50,7 +50,7 @@
                   </div>
                   <div class="form-group">
                     <label for="summernote">Description</label>
-                    <textarea name="description" id="summernote" cols="60" rows="8">{{$post->description}}</textarea>
+                    <textarea name="description" id="your_summernote" cols="60" rows="8">{{$post->description}}</textarea>
                   </div>
                 </div>
                 <!-- /.card-body -->

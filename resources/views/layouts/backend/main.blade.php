@@ -10,7 +10,10 @@
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('css/toastr.min.css')}}">
-  
+  <!-- Summernote -->
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+
   <script src="https://kit.fontawesome.com/b050c98186.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <!-- Ionicons -->
@@ -27,8 +30,7 @@
   <link rel="stylesheet" href="{{asset('backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="{{asset('backend/plugins/daterangepicker/daterangepicker.css')}}">
-  <!-- summernote -->
-  <link rel="stylesheet" href="{{asset('backend/plugins/summernote/summernote-bs4.css')}}">
+  
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
@@ -62,6 +64,7 @@
   
 </div>
 
+
 <script src="{{ asset('js/toastr.min.js') }}"></script>
     @jquery
     @toastr_js
@@ -71,6 +74,7 @@
 <!-- jQuery UI 1.11.4 -->
 <script src="{{asset('backend/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
@@ -90,8 +94,6 @@
 <script src="{{asset('backend/plugins/daterangepicker/daterangepicker.js')}}"></script>
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="{{asset('backend/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
-<!-- Summernote -->
-<script src="{{asset('backend/plugins/summernote/summernote-bs4.min.js')}}"></script>
 <!-- overlayScrollbars -->
 <script src="{{asset('backend/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
@@ -143,7 +145,14 @@ toastr.options =
 @endif
 </script>
 
-
+{{-- summernote --}}
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+<script>
+  $(document).ready(function() {
+      $("#your_summernote").summernote();
+      $('.dropdown-toggle').dropdown();
+  });
+</script>
 @yield('js')
 </body>
 </html>

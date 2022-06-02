@@ -63,7 +63,7 @@ class adminPostController extends Controller
             $imageName = 'default.png';
         }
       
-      $post = new Post;~
+      $post = new Post;
       $post->title = $request->title;
       $post->user_id = Auth::id();
       $post->slug = $slug;
@@ -112,9 +112,7 @@ class adminPostController extends Controller
 
     }
 
-
-
-    
+ 
     public function edit($id)
     {
       
@@ -183,7 +181,6 @@ class adminPostController extends Controller
       toastr()->success('Post Updated Succesfully :)');
       return redirect()->back();
     }
-
 
 
     public function destroy($id)

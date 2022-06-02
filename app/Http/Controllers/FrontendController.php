@@ -6,6 +6,7 @@ use App\Models\Comment;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use CyrildeWit\EloquentViewable\Support\Period;
+use Illuminate\Support\Str;
 
 class FrontendController extends Controller
 {

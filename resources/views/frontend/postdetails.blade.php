@@ -33,7 +33,7 @@
             <div class="col-full s-content__main">
 
                 
-                <p>{{$post->description}} </p>
+                <p>{!!$post->description!!} </p>
 
                 <p class="s-content__tags">
                     <span>Post Tags</span>

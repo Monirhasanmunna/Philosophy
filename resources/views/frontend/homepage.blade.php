@@ -79,7 +79,7 @@
         <div class="grid-sizer"></div>
         @foreach ($posts as $post)
 
-        <article class="masonry__brick entry format-standard" data-aos="fade-up">
+        <article class="masonry__brick entry format-standard" data-aos="fade-up" style="position:absolute;top:527px;">
                 
             <div class="entry__thumb">
                 <a href="{{route('post.details',[$post->slug])}}" class="entry__thumb-link">
@@ -98,7 +98,7 @@
                 </div>
                 <div class="entry__excerpt">
                     <p>
-                        {{Str::words($post->description, 10, '...')}}
+                        {{ Str::words(strip_tags($post->description), 10) }}
                     </p>
                 </div>
                 <div class="entry__meta">
@@ -121,7 +121,7 @@
 @endsection
 
 @section('loder')
-{{-- <div id="preloader">
+<div id="preloader">
     <div id="loader">
         <div class="line-scale">
             <div></div>
@@ -131,5 +131,5 @@
             <div></div>
         </div>
     </div>
-</div> --}}
+</div>
 @endsection

@@ -71,8 +71,9 @@
         <tfoot>
         <tr>
           <th>ID</th>
+          <th>Image</th>
           <th>Name</th>
-          <th>Slug</th>
+          <th>Posts</th>
           <th>Created At</th>
           <th>Updated At</th>
           <th colspan="2">Action</th>

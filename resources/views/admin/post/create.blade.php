@@ -4,9 +4,7 @@
 @section('css')
     <link rel="stylesheet" href="{{asset('backend/plugins/select2/css/select2.min.css')}}">
     <link rel="stylesheet" href="{{asset('backend/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
-    <!-- Summernote -->
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+    
 @endsection
 
 @section('header')
@@ -48,8 +46,8 @@
                     <input type="text" id="title" name="title" class="form-control">
                   </div>
                   <div class="form-group">
-                    <label for="inputDescription">Description</label>
-                    <textarea id="summernote" name="description"></textarea>
+                    <label for="mysummernote">Description</label>
+                    <textarea id="your_summernote" name="description"></textarea>
                   </div>
                 </div>
                 <!-- /.card-body -->
@@ -138,11 +136,5 @@
     $('.select2').select2()
     });
 </script>
-<script>
-    $('#summernote').summernote({
-      placeholder: 'Hello Bootstrap 4',
-      tabsize: 2,
-      height: 100
-    });
-  </script>
+
 @endsection
