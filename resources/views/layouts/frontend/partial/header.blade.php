@@ -56,17 +56,7 @@
                     
                     </ul>
                 </li>
-                <li class="has-children">
-                    <a href="#0" title="">Blog</a>
-                    <ul class="sub-menu">
-                    <li><a href="single-video.html">Video Post</a></li>
-                    <li><a href="single-audio.html">Audio Post</a></li>
-                    <li><a href="single-gallery.html">Gallery Post</a></li>
-                    <li><a href="single-standard.html">Standard Post</a></li>
-                    </ul>
-                </li>
-                <li><a href="style-guide.html" title="">Styles</a></li>
-                <li><a href="about.html" title="">About</a></li>
+                <li><a href="{{route('about')}}" title="">About</a></li>
                 <li><a href="contact.html" title="">Contact</a></li>
             </ul> <!-- end header__nav -->
 

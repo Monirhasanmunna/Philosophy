@@ -27,6 +27,7 @@ require __DIR__.'/auth.php';
 //Frontend Template Route
 Route::group([],function() {
     Route::get('/',[FrontendController::class,'home'])->name('home');
+    Route::get('aboutus',[FrontendController::class,'about'])->name('about');
     Route::get('post/{slug}/details',[PostDetailsController::class,'index'])->name('post.details');
     Route::get('PostByCategory/{slug}/post',[PostDetailsController::class,'categoryPost'])->name('categoryPost.details');
     Route::get('PostByTag/{slug}/post',[PostDetailsController::class,'tagPost'])->name('tagpost.details');

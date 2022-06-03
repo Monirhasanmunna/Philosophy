@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\Comment;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -18,6 +19,12 @@ class FrontendController extends Controller
         $secondItem = $frontendPost->splice(0,2);
 
         return view('frontend.homepage',compact('posts','firstItem','secondItem'));
+    }
+
+    public function about()
+    {
+        $about = About::where('id',1)->first();
+        return view('frontend.about',compact('about'));
     }
 
 }
