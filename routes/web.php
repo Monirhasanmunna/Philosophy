@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\AdminTagController;
 use App\Http\Controllers\Admin\adminPostController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\UserlistController;
+use App\Http\Controllers\Admin\ContactController;
 
 use App\Http\Controllers\Author\AuthorDashboard;
 use App\Http\Controllers\Author\authorCategoryController;
@@ -75,6 +76,8 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function() {
     Route::put('logo/{id}/update',[SettingsController::class, 'logoUpdate'])->name('admin.settings.logo');
     Route::put('social/{id}/update',[SettingsController::class, 'socialUpdate'])->name('admin.settings.social');
     Route::put('about/{id}/update',[SettingsController::class, 'aboutUpdate'])->name('admin.settings.about');
+    Route::get('contact',[ContactController::class, 'contact'])->name('admin.contact');
+    Route::put('contact/{id}/update',[ContactController::class, 'update'])->name('admin.contact.update');
 });
 
 
