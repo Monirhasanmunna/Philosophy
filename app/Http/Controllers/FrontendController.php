@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Comment;
+use App\Models\Contact;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use CyrildeWit\EloquentViewable\Support\Period;
@@ -25,6 +26,12 @@ class FrontendController extends Controller
     {
         $about = About::where('id',1)->first();
         return view('frontend.about',compact('about'));
+    }
+
+    public function contact()
+    {
+        $contact = Contact::where('id', 1 )->first();
+        return view('frontend.contact',compact('contact'));
     }
 
 }

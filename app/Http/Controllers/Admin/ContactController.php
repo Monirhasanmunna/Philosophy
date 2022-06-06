@@ -13,7 +13,8 @@ class ContactController extends Controller
     public function contact()
     {
         $user = User::FindorFail(Auth::id());
-        return view('admin.contact.contact',compact('user'));
+        $contact = Contact::where('id', 1)->first();
+        return view('admin.contact.contact',compact('user','contact'));
     }
 
     public function update(Request $request, $id)
@@ -25,7 +26,7 @@ class ContactController extends Controller
             'address' => 'required',
             'city'    => 'required',
             'area_code' => 'required',
-            'description' => 'required',
+            'description' => 'required|max:2000',
 
         ]);
 

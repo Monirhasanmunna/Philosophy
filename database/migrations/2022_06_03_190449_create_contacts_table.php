@@ -20,7 +20,7 @@ class CreateContactsTable extends Migration
             $table->string('address');
             $table->string('city');
             $table->string('area_code');
-            $table->string('description');
+            $table->text('description');
             $table->timestamps();
         });
     }
