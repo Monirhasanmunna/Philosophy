@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\adminPostController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\UserlistController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\AdminContactUsController;
 
 use App\Http\Controllers\Author\AuthorDashboard;
 use App\Http\Controllers\Author\authorCategoryController;
@@ -22,6 +23,7 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\PostDetailsController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ContactUsController;
 
 require __DIR__.'/auth.php';
 
@@ -35,6 +37,7 @@ Route::group([],function() {
     Route::get('PostByTag/{slug}/post',[PostDetailsController::class,'tagPost'])->name('tagpost.details');
     Route::post('subscription',[SubscriptionController::class,'store'])->name('subscription.store');
     Route::post('comments/{post}',[CommentController::class,'store'])->name('comment.store');
+    Route::post('contact_us',[ContactUsController::class,'store'])->name('contactus.store');
 });
 
 //Admin Dashborard Routes
@@ -79,6 +82,11 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function() {
     Route::put('about/{id}/update',[SettingsController::class, 'aboutUpdate'])->name('admin.settings.about');
     Route::get('contact',[ContactController::class, 'contact'])->name('admin.contact');
     Route::put('contact/{id}/update',[ContactController::class, 'update'])->name('admin.contact.update');
+    Route::get('contact_us',[AdminContactUsController::class,'index'])->name('admin.contact.index');
+    Route::get('contact_us/{id}/show',[AdminContactUsController::class,'show'])->name('admin.contact.show');
+    Route::delete('contact_us/{id}/destroy',[AdminContactUsController::class,'destroy'])->name('admin.contact.destroy');
+
+    
 });
 
 

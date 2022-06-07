@@ -50,7 +50,8 @@
 
             <h3>Say Hello.</h3>
 
-            <form name="cForm" id="cForm" method="post" action="">
+            <form name="cForm" id="cForm" method="post" action="{{route('contactus.store')}}">
+                @csrf
                 <fieldset>
 
                     <div class="form-field">
@@ -80,6 +81,10 @@
     </div> <!-- end row -->
 
 </section> <!-- s-content -->
+<script src="{{ asset('js/toastr.min.js') }}"></script>
+    @jquery
+    @toastr_js
+    @toastr_render
 @endsection
 
 @section('js')

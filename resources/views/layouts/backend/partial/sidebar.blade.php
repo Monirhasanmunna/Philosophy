@@ -134,6 +134,13 @@
                 <p>Contact Details</p>
               </a>
             </li>
+
+            <li class="nav-item" style="width: 100%;">
+              <a href="{{route('admin.contact.index')}}" class="nav-link">
+                <i class="fas fa-address-card"></i>
+                <p>Contact Us List</p>
+              </a>
+            </li>
           </ul>  
             </li>
 
