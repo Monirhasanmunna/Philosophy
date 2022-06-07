@@ -76,7 +76,7 @@
         </tfoot>
       </table>
     </div>
-    {{!! $contacts->links() !!}}
+    {!! $contacts->links() !!}
   </div>
 @endsection
 
