@@ -41,42 +41,60 @@
                     <div class="form-group row">
                       <label for="phone" class="col-sm-2 col-form-label">Phone :</label>
                       <div class="col-sm-10">
-                        <input type="number"  class="form-control" name="phone"  id="phone" value="{{$contact->phone}}" placeholder="Enter Your Phone Number">
+                        <input type="number"  class="form-control" name="phone" class="@error('phone') is-invalid @enderror"  id="phone" value="{{$contact->phone}}" placeholder="Enter Your Phone Number">
+                        @error('phone')
+                          <strong class="text-danger">{{ $message }}</strong>
+                        @enderror
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label for="email" class="col-sm-2 col-form-label">Email :</label>
                       <div class="col-sm-10">
-                        <input type="email"  class="form-control" name="email" id="email" value="{{$contact->email}}" placeholder="Enter Your Email">
+                        <input type="email"  class="form-control" name="email" class="@error('email') is-invalid @enderror" id="email" value="{{$contact->email}}" placeholder="Enter Your Email">
+                        @error('email')
+                          <strong class="text-danger">{{ $message }}</strong>
+                        @enderror
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label for="address" class="col-sm-2 col-form-label">Address :</label>
                       <div class="col-sm-10">
-                        <input type="text"  class="form-control" name="address" id="address" value="{{$contact->address}}" placeholder="Enter Your Address">
+                        <input type="text"  class="form-control" name="address" class="@error('address') is-invalid @enderror" id="address" value="{{$contact->address}}" placeholder="Enter Your Address">
+                        @error('address')
+                          <strong class="text-danger">{{ $message }}</strong>
+                        @enderror
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label for="city" class="col-sm-2 col-form-label">City :</label>
                       <div class="col-sm-10">
-                        <input type="text"  class="form-control" name="city" id="city" value="{{$contact->city}}" placeholder="Enter Your City">
+                        <input type="text"  class="form-control" name="city" class="@error('city') is-invalid @enderror" id="city" value="{{$contact->city}}" placeholder="Enter Your City">
+                        @error('city')
+                          <strong class="text-danger">{{ $message }}</strong>
+                        @enderror
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label for="area_code" class="col-sm-2 col-form-label">Area Code :</label>
                       <div class="col-sm-10">
-                        <input type="number"  class="form-control" name="area_code" id="area_code" value="{{$contact->area_code}}" placeholder="Enter Your Area Code">
+                        <input type="number"  class="form-control" name="area_code" class="@error('area_code') is-invalid @enderror" id="area_code" value="{{$contact->area_code}}" placeholder="Enter Your Area Code">
+                        @error('area_code')
+                          <strong class="text-danger">{{ $message }}</strong>
+                        @enderror
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label for="description" class="col-sm-2 col-form-label">Description :</label>
                       <div class="col-sm-10">
-                        <textarea type="text"  class="form-control" name="description" id="description" placeholder="Enter Description">{{$contact->description}}</textarea>
+                        <textarea type="text"  class="form-control" name="description" class="@error('description') is-invalid @enderror" id="description" placeholder="Enter Description">{{$contact->description}}</textarea>
+                        @error('description')
+                          <strong class="text-danger">{{ $message }}</strong>
+                        @enderror
                       </div>
                     </div>
 

@@ -46,11 +46,17 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" id="title" name="title" class="form-control" value="{{$post->title}}">
+                    <input type="text" id="title" name="title" class="form-control" value="{{$post->title}}" class="@error('title') is-invalid @enderror">
+                    @error('title')
+                      <strong class="text-danger">{{ $message }}</strong>
+                    @enderror
                   </div>
                   <div class="form-group">
                     <label for="summernote">Description</label>
-                    <textarea name="description" id="your_summernote" cols="60" rows="8">{{$post->description}}</textarea>
+                    <textarea name="description" class="@error('description') is-invalid @enderror" id="your_summernote" cols="60" rows="8">{{$post->description}}</textarea>
+                    @error('description')
+                    <strong class="text-danger">{{ $message }}</strong>
+                    @enderror
                   </div>
                 </div>
                 <!-- /.card-body -->
@@ -71,7 +77,7 @@
                     <div class="form-group">
                         <label>Category Select</label>
                         <div class="select2-purple">
-                          <select class="select2" multiple="multiple" name="category[]" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
+                          <select class="select2" multiple="multiple" name="category[]" class="@error('category') is-invalid @enderror" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
                             @foreach ($categories as $category)
                                 <option value="{{$category->id}}" 
                                     @foreach ($post->categories as $postCategory)
@@ -80,12 +86,15 @@
                                     >{{$category->name}}</option>
                             @endforeach
                           </select>
+                          @error('category')
+                            <strong class="text-danger">{{ $message }}</strong>
+                          @enderror
                         </div>
                       </div>
                       <div class="form-group">
                         <label>Tag Select</label>
                         <div class="select2-purple">
-                          <select class="select2" name="tag[]" multiple="multiple" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
+                          <select class="select2" name="tag[]" class="@error('tag') is-invalid @enderror" multiple="multiple" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
                             @foreach ($tags as $tag)
                                 <option value="{{$tag->id}}"
                                     
@@ -96,13 +105,19 @@
                                     >{{$tag->name}}</option>
                             @endforeach
                           </select>
+                          @error('tag')
+                            <strong class="text-danger">{{ $message }}</strong>
+                          @enderror
                         </div>
                       </div>
                       <div class="form-group">
                           <strong>Choose file</strong>
                         <div class="custom-file">
-                          <input type="file" class="custom-file-input" name="image" id="customFile">
+                          <input type="file" class="custom-file-input" name="image" class="@error('image') is-invalid @enderror" id="customFile">
                           <label class="custom-file-label"  for="customFile">Choose file</label>
+                          @error('image')
+                            <strong class="text-danger">{{ $message }}</strong>
+                          @enderror
                         </div>
                       </div>
 

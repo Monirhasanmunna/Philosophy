@@ -43,11 +43,17 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" id="title" name="title" class="form-control">
+                    <input type="text" id="title" name="title" class="form-control"class="@error('title') is-invalid @enderror">
+                    @error('title')
+                        <strong class="text-danger">{{ $message }}</strong>
+                    @enderror
                   </div>
                   <div class="form-group">
                     <label for="mysummernote">Description</label>
-                    <textarea id="your_summernote" name="description"></textarea>
+                    <textarea id="your_summernote" name="description" class="@error('description') is-invalid @enderror"></textarea>
+                    @error('description')
+                      <strong class="text-danger">{{ $message }}</strong>
+                    @enderror
                   </div>
                 </div>
                 <!-- /.card-body -->
@@ -68,28 +74,37 @@
                     <div class="form-group">
                         <label>Category Select</label>
                         <div class="select2-purple">
-                          <select class="select2" multiple="multiple" name="category[]" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
+                          <select class="select2" multiple="multiple" name="category[]" class="@error('category') is-invalid @enderror" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
                             @foreach ($categories as $category)
                                 <option value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach
                           </select>
+                          @error('category')
+                              <strong class="text-danger">{{ $message }}</strong>
+                          @enderror
                         </div>
                       </div>
                       <div class="form-group">
                         <label>Tag Select</label>
                         <div class="select2-purple">
-                          <select class="select2" name="tag[]" multiple="multiple" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
+                          <select class="select2" name="tag[]" class="@error('tag') is-invalid @enderror" multiple="multiple" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
                             @foreach ($tags as $tag)
                                 <option value="{{$tag->id}}">{{$tag->name}}</option>
                             @endforeach
                           </select>
+                          @error('tag')
+                              <strong class="text-danger">{{ $message }}</strong>
+                          @enderror
                         </div>
                       </div>
                       <div class="form-group">
                           <strong>Choose file</strong>
                         <div class="custom-file">
-                          <input type="file" class="custom-file-input" name="image" id="customFile">
+                          <input type="file" class="custom-file-input" name="image" id="customFile" class="@error('image') is-invalid @enderror">
                           <label class="custom-file-label"  for="customFile">Choose file</label>
+                          @error('image')
+                              <strong class="text-danger">{{ $message }}</strong>
+                          @enderror
                         </div>
                       </div>
 

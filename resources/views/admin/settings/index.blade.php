@@ -55,8 +55,11 @@
                       <div class="form-group">
                         <strong>Choose file</strong>
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" name="logo" id="customFile">
+                        <input type="file" class="custom-file-input" name="logo" class="@error('logo') is-invalid @enderror" id="customFile">
                         <label class="custom-file-label"for="customFile">Choose file</label>
+                        @error('logo')
+                          <strong class="text-danger">{{ $message }}</strong>
+                        @enderror
                       </div>
                     </div>
 
@@ -74,7 +77,10 @@
                     <div class="form-group row">
                       <label for="about" class="col-sm-2 col-form-label">About :</label>
                       <div class="col-sm-10">
-                        <textarea type="text"  class="form-control" rows="8" name="about" value="" id="about" placeholder="Enter About Your Website">{{$about->about}}</textarea>
+                        <textarea type="text"  class="form-control" rows="8" name="about" class="@error('about') is-invalid @enderror" value="" id="about" placeholder="Enter About Your Website">{{$about->about}}</textarea>
+                        @error('about')
+                          <strong class="text-danger">{{ $message }}</strong>
+                        @enderror
                       </div>
                     </div>
 
@@ -96,42 +102,60 @@
                     <div class="form-group row">
                       <label for="facebook" class="col-sm-2 col-form-label">Facebook :</label>
                       <div class="col-sm-10">
-                        <input type="text"  class="form-control" name="facebook" value="{{$social->facebook}}" id="facebook" placeholder="Enter Your facebook link">
+                        <input type="text"  class="form-control" name="facebook" class="@error('facebook') is-invalid @enderror" value="{{$social->facebook}}" id="facebook" placeholder="Enter Your facebook link">
+                        @error('facebook')
+                          <strong class="text-danger">{{ $message }}</strong>
+                        @enderror
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label for="instagram" class="col-sm-2 col-form-label">Instagram :</label>
                       <div class="col-sm-10">
-                        <input type="text"  class="form-control" name="instagram" value="{{$social->instagram}}" id="instagram" placeholder="Enter Your instagram link">
+                        <input type="text"  class="form-control" name="instagram" class="@error('instagram') is-invalid @enderror" value="{{$social->instagram}}" id="instagram" placeholder="Enter Your instagram link">
+                        @error('instagram')
+                          <strong class="text-danger">{{ $message }}</strong>
+                        @enderror
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label for="twitter" class="col-sm-2 col-form-label">Twitter :</label>
                       <div class="col-sm-10">
-                        <input type="text"  class="form-control" name="twitter" value="{{$social->twitter}}" id="twitter" placeholder="Enter Your twitter link">
+                        <input type="text"  class="form-control" name="twitter" class="@error('twitter') is-invalid @enderror" value="{{$social->twitter}}" id="twitter" placeholder="Enter Your twitter link">
+                        @error('twitter')
+                          <strong class="text-danger">{{ $message }}</strong>
+                        @enderror
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label for="pinterest" class="col-sm-2 col-form-label">Pinterest :</label>
                       <div class="col-sm-10">
-                        <input type="text"  class="form-control" name="pinterest" value="{{$social->pinterest}}" id="facebook" placeholder="Enter Your pinterest link">
+                        <input type="text"  class="form-control" name="pinterest" class="@error('pinterest') is-invalid @enderror" value="{{$social->pinterest}}" id="facebook" placeholder="Enter Your pinterest link">
+                        @error('pinterest')
+                          <strong class="text-danger">{{ $message }}</strong>
+                        @enderror
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label for="google_plus" class="col-sm-2 col-form-label">Google Plus :</label>
                       <div class="col-sm-10">
-                        <input type="text"  class="form-control" name="google_plus" value="{{$social->google_plus}}" id="google_plus" placeholder="Enter Your google plus link">
+                        <input type="text"  class="form-control" name="google_plus" class="@error('google_plus') is-invalid @enderror" value="{{$social->google_plus}}" id="google_plus" placeholder="Enter Your google plus link">
+                        @error('google_plus')
+                          <strong class="text-danger">{{ $message }}</strong>
+                        @enderror
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label for="linkdin" class="col-sm-2 col-form-label">Linkdin :</label>
                       <div class="col-sm-10">
-                        <input type="text"  class="form-control" name="linkdin" value="{{$social->linkdin}}" id="linkdin" placeholder="Enter Your linkdin link">
+                        <input type="text"  class="form-control" name="linkdin" class="@error('linkdin') is-invalid @enderror" value="{{$social->linkdin}}" id="linkdin" placeholder="Enter Your linkdin link">
+                        @error('linkdin')
+                          <strong class="text-danger">{{ $message }}</strong>
+                        @enderror
                       </div>
                     </div>
 
