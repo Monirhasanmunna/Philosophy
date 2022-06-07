@@ -18,7 +18,7 @@ class AdminDashboard extends Controller
         $comments = Comment::latest()->paginate(10);
         $subscribers = Subscription::latest()->paginate(10);
         $user = User::FindorFail(Auth::id());
-        $posts = Post::all();
+        $posts = Post::approve()->status();
         $pendingPost = Post::where('is_approve', 0)->get();
         return view('admin.dashboard',compact('user','comments','subscribers','users','posts','pendingPost'));
     }

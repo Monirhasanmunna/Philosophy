@@ -56,8 +56,8 @@
                             </div>
 
                             <div class="forgot-pass  text-light ">
-                                <a href="{{ route('password.request') }}">
-                                    <h6>Forgot Password?</h6>
+                                <a href="{{ route('register') }}">
+                                    <h6>Register Here</h6>
                                 </a>
                             </div>
                         </form>

@@ -18,7 +18,8 @@ class authorPostController extends Controller
     public function index()
     {
       $user = User::FindorFail(Auth::id());
-      $posts = Post::latest()->paginate();
+      $post = Post::where('user_id',Auth::id())->latest();
+      $posts = $post->paginate();
       return view('author.post.index',compact('posts','user'));
     }
 

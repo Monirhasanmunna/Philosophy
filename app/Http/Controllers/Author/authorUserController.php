@@ -24,7 +24,7 @@ class authorUserController extends Controller
        
         $request->validate([
 
-            'username' => 'required|max:50',
+            'username' => 'sometimes|max:50',
             'name'  =>  'required|max:50',
             'image'  => 'sometimes|mimes:jpg,jpeg,webp,png,svg,gif|max:2024',
             'about'  => 'sometimes|max:1000',
