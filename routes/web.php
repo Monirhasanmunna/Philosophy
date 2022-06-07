@@ -18,6 +18,8 @@ use App\Http\Controllers\Author\AuthorDashboard;
 use App\Http\Controllers\Author\authorCategoryController;
 use App\Http\Controllers\Author\authorTagController;
 use App\Http\Controllers\Author\authorPostController;
+use App\Http\Controllers\Author\AuthorContactController;
+use App\Http\Controllers\Author\AuthorContactUsController;
 
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\PostDetailsController;
@@ -80,6 +82,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function() {
     Route::put('logo/{id}/update',[SettingsController::class, 'logoUpdate'])->name('admin.settings.logo');
     Route::put('social/{id}/update',[SettingsController::class, 'socialUpdate'])->name('admin.settings.social');
     Route::put('about/{id}/update',[SettingsController::class, 'aboutUpdate'])->name('admin.settings.about');
+
     Route::get('contact',[ContactController::class, 'contact'])->name('admin.contact');
     Route::put('contact/{id}/update',[ContactController::class, 'update'])->name('admin.contact.update');
     Route::get('contact_us',[AdminContactUsController::class,'index'])->name('admin.contact.index');
@@ -88,8 +91,6 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function() {
 
     
 });
-
-
 
 //Author Dashboard Routes
 Route::group(['prefix'=>'author','middleware'=> ['auth','author']],function(){
@@ -121,6 +122,11 @@ Route::group(['prefix'=>'author','middleware'=> ['auth','author']],function(){
     Route::put('post/{id}/update',[authorPostController::class,'update'])->name('author.post.update');
     Route::delete('post/{id}/delete',[authorPostController::class,'destroy'])->name('author.post.destroy');
 
+    Route::get('contact',[AuthorContactController::class, 'contact'])->name('author.contact');
+    Route::put('contact/{id}/update',[AuthorContactController::class, 'update'])->name('author.contact.update');
+    Route::get('contact_us',[AuthorContactUsController::class,'index'])->name('author.contact.index');
+    Route::get('contact_us/{id}/show',[AuthorContactUsController::class,'show'])->name('author.contact.show');
+    Route::delete('contact_us/{id}/destroy',[AuthorContactUsController::class,'destroy'])->name('author.contact.destroy');
 
 });
 

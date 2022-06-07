@@ -1,0 +1,113 @@
+.wraper{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to right,#1E3B62,#063e83ee,rgb(31, 142, 175));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.title h2{
+    font-family: 'Playfair Display', serif;
+}
+
+
+.login-form{
+    width: 400px;
+    height: auto;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    padding: 50px;
+    position: relative;
+}
+
+
+.icon{
+    position: absolute;
+    bottom: 38px;
+    right: 30px;
+    width: 100px;
+    padding: 10px;
+}
+
+.icon a{
+    text-decoration: none;
+    
+}
+
+
+
+
+.icon-1{
+    width: 32px;
+    height: 32px;
+    font-size: 17px;
+    border-radius: 50%;
+    padding: 3px;
+    margin-right: 3px;
+    padding-top: 8px;
+    padding-left: 10px;
+    background-color: #fbff15;
+    color: #186ddd;
+}
+
+
+.icon-2{
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    border-radius: 50%;
+    padding: 21px;
+    padding-top: 9px;
+    padding-left: 8px;
+    background-color: #fbff15;
+    color: #186ddd;
+}
+
+
+.user-name ::placeholder{
+    font-family: 'Noto Serif JP', serif;
+}
+
+
+.user-name, .password{
+    transition: 0.3s;
+}
+
+.user-name:hover, .password:hover{
+    box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.411);
+}
+
+.form-btn{
+    display: block;
+    width: 100%;
+    padding: 7px;
+    border-radius: 5px;
+    border:none;
+    text-transform: capitalize;
+    background-color: orange;
+    text-align: center;
+    transition: 0.3s;
+    color: rgb(8, 0, 114);
+    font-family: 'Noto Serif JP', serif;
+    
+}
+
+.form-btn:hover{
+    box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.192);
+    
+}
+
+
+.forgot-pass a{
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.forgot-pass a>h6{
+    font-family: 'Noto Serif JP', serif;
+    opacity: 0.8;
+    font-size: 14px;
+}

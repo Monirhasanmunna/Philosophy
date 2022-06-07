@@ -92,18 +92,16 @@
       @if (Request::is('admin*'))
       <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
         <span class="dropdown-item dropdown-header">
-          <img class="img-thumbnail" style="width:80px;height:80px;border-radius:50%;" src="{{asset('storage/user/'.$user->image)}}" alt="" srcset="">
+          <img class="img-thumbnail" style="width:80px;height:80px;border-radius:50%;" src="{{asset('storage/user/'.Auth::user()->image)}}" alt="" srcset="">
         </span>
         
-        <a href="{{route('admin.user.info')}}" class="dropdown-item" style="background-color: none;color:blue;"> 
-          <i class="far fas-setting"></i>User Update</a>
+        <h5 class="text-center">{{Auth::user()->username}}</h5>
+        <a href="{{route('admin.user.info')}}" class="btn btn-primary pull-right"> 
+          <i class="fas fa-setting"></i>User Update</a>
           <form method="POST" action="{{ route('logout') }}">
             @csrf
-            <x-dropdown-link :href="route('logout')"
-                    onclick="event.preventDefault();
-                                this.closest('form').submit();">
-                <span>Log Out</span>
-            </x-dropdown-link>
+            <button style="border: none;" class="btn btn-danger" href="{{route('logout')}}" onclick="event.preventDefault();this.closest('form').submit();">Log Out</button>
+        </form>
         </form>
       </div>
       @endif
@@ -111,18 +109,14 @@
       @if (Request::is('author*'))
       <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
         <span class="dropdown-item dropdown-header">
-          <img class="img-thumbnail" style="width:80px;height:80px;border-radius:50%;" src="{{asset('storage/user/'.$user->image)}}" alt="" srcset="">
+          <img class="img-thumbnail" style="width:80px;height:80px;border-radius:50%;" src="{{asset('storage/user/'.Auth::user()->image)}}" alt="" srcset="">
         </span>
-        
-        <a href="{{route('author.user.info')}}" class="dropdown-item" style="background-color: none;color:blue;"> 
-          <i class="far fas-setting"></i>User Update</a>
+        <h5 class="text-center">{{Auth::user()->username}}</h5>
+        <a href="{{route('author.user.info')}}" class="btn btn-primary pull-right"> 
+          <i class="fas fa-setting"></i>User Update</a>
           <form method="POST" action="{{ route('logout') }}">
             @csrf
-            <x-dropdown-link :href="route('logout')"
-                    onclick="event.preventDefault();
-                                this.closest('form').submit();">
-                <span>Log Out</span>
-            </x-dropdown-link>
+            <button style="border: none;" class="btn btn-danger" href="{{route('logout')}}" onclick="event.preventDefault();this.closest('form').submit();">Log Out</button>
         </form>
       </div>
       @endif

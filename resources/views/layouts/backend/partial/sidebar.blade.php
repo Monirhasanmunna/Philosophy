@@ -256,6 +256,32 @@
           </ul>
         </li>
 
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+            <i class="fas fa-address-book"></i>
+            <p>
+              Contact
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+
+            <li class="nav-item" style="width: 100%;">
+              <a href="{{route('author.contact')}}" class="nav-link">
+                <i class="fas fa-address-card"></i>
+                <p>Contact Details</p>
+              </a>
+            </li>
+
+            <li class="nav-item" style="width: 100%;">
+              <a href="{{route('author.contact.index')}}" class="nav-link">
+                <i class="fas fa-address-card"></i>
+                <p>Contact Us List</p>
+              </a>
+            </li>
+          </ul>  
+            </li>
+
         @endif
 
       </ul>
