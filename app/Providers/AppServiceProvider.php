@@ -53,5 +53,8 @@ class AppServiceProvider extends ServiceProvider
         $popularPost = Post::orderBy('created_at','Asc')->approve()->take(6)->get();
         View::share('popularPost',$popularPost);
 
+        $comments = Comment::orderBy('created_at','Desc')->take(3)->get();
+        View::share('comments',$comments);
+
     }
 }

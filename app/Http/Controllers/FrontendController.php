@@ -34,4 +34,25 @@ class FrontendController extends Controller
         return view('frontend.contact',compact('contact'));
     }
 
+    public function search(Request $request)
+    {
+
+        $frontendPost = Post::orderBy('created_at','Desc')->approve()->take(3)->get();
+        $firstItem = $frontendPost->splice(0,1);
+        $secondItem = $frontendPost->splice(0,2);
+
+        // Get the search value from the request
+        $search = $request->input('search');
+
+    // Search in the title and body columns from the posts table
+        $posts = Post::query()
+            ->where('title', 'LIKE', "%{$search}%")
+            ->orWhere('description', 'LIKE', "%{$search}%")
+            ->approve()
+            ->status()
+            ->paginate(8);
+
+            return view('frontend.search',compact('posts','frontendPost','firstItem','secondItem'));
+    }
+
 }

@@ -52,7 +52,7 @@
                             </div>
 
                             <div class="button mb-4">
-                                <button class="btn form-btn" type="submit">Submit</button>
+                                <button class="btn waves-effect form-btn" type="submit">Submit</button>
                             </div>
 
                             <div class="forgot-pass  text-light ">

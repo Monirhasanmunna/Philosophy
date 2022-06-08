@@ -40,6 +40,8 @@ Route::group([],function() {
     Route::post('subscription',[SubscriptionController::class,'store'])->name('subscription.store');
     Route::post('comments/{post}',[CommentController::class,'store'])->name('comment.store');
     Route::post('contact_us',[ContactUsController::class,'store'])->name('contactus.store');
+
+    Route::get('search',[FrontendController::class,'search'])->name('post.search');
 });
 
 //Admin Dashborard Routes

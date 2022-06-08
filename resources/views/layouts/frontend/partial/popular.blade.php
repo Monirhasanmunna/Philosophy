@@ -8,10 +8,10 @@
             <div class="block-1-2 block-m-full popular__posts">
                 @foreach ($popularPost as $post)
                     <article class="col-block popular__post">
-                    <a href="#0" class="popular__thumb">
+                    <a href="{{route('post.details',[$post->slug])}}" class="popular__thumb">
                         <img src="{{asset('storage/post/'.$post->image)}}" alt="{{$post->image}}">
                     </a>
-                    <h5><a href="#0">{{$post->title}}</a></h5>
+                    <h5><a href="{{route('post.details',[$post->slug])}}">{{$post->title}}</a></h5>
                     <section class="popular__meta">
                             <span class="popular__author"><span>By</span> <a href="#0">{{$post->user->username}}</a></span>
                         <span class="popular__date"><span>on</span> <time >{{$post->created_at->format('D M Y')}}</time></span>
