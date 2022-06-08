@@ -38,7 +38,7 @@
             <div class="featured__column featured__column--small">
 
                 @foreach ($secondItem as $secondpost)
-                    <div class="entry" style="background-image:url({{asset('storage/post/'.$secondpost->image)}});">
+                    <div class="entry" style="background-image:url({{asset('storage/post/'.$secondpost->image)}})">
                     
                     <div class="entry__content">
 

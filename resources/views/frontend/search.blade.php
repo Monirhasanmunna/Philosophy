@@ -74,7 +74,7 @@
 
 @section('content')
 <div class="row masonry-wrap">
-    <div class="masonry" style="margin-bottom: 5rem;">
+    <div class="masonry" style=" margin-bottom:5rem;">
 
         <div class="grid-sizer"></div>
         @if ($posts->count() > 0)
